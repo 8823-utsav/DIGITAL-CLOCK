@@ -1,0 +1,103 @@
+@import url(" https://fonts.googleapis.com/css2?family=Crimson+Pro");
+* {
+  font-family: "poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(14, 9, 9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrappert {
+  width: 100%;
+  max-width: 500px;
+  height: 200px;
+  /* background: rgba(198, 12, 236, 0.297); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  margin: 0 15px;
+  color: rgb(247, 247, 247);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: repeating-conic-gradient(
+
+  from var(--i),
+  aqua 0%,
+  aqua 0%,
+  aqua 0%,
+  transparent 5%,
+  transparent 40%,
+  aqua 50%
+  );
+  
+  animation: anim 4s linear infinite;
+}
+
+.box .num {
+  font-size: 45px;
+  font-weight: 800;
+  line-height: 60px;
+  z-index: 1;
+}
+
+.box::before
+{
+    position: absolute;
+    content:  "" ;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(
+
+  from var(--i),
+  rgb(3, 70, 228) 0%,
+  rgb(43, 7, 206) 5%,
+  rgb(75, 12, 212) 5%,
+  transparent 5%,
+  transparent 40%,
+  rgb(6, 42, 245) 50%
+  );
+
+  animation: anim 4s linear infinite;
+  animation-delay: -1s;
+  border-radius: 10px;
+}
+
+@property --i {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes anim {
+     
+    0% {
+        --i : 0deg;
+    }
+    100% {
+        --i : 360deg ;
+    }
+    
+}
+.box ::after {
+    position: absolute;
+    content:  "";
+    inset: 3px;
+    
+    border: 3px solid black;
+    border-radius: 10px;
+}
